@@ -1,4 +1,5 @@
-
+import torch
+import torch.nn as nn
 
 class Transformer(nn.Module):
     def __init__(self, enc_in_d, enc_n_blocks, enc_n_heads,
