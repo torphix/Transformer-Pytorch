@@ -8,8 +8,6 @@ class Transformer(nn.Module):
         self.encoder = Encoder(enc_n_blocks, enc_in_d, enc_n_heads, pad_token=pad_token)
         self.decoder = Decoder(dec_n_blocks, dec_in_d, dec_n_heads, pad_token=pad_token)
         
-        self.fc_out = nn.Linear(config['decoder']['in_d'], config['out_d'])
-    
     def forward(self, src, tgt, src_lens, tgt_lens, return_attn=False):
         '''
         Lens are used to compute the padding and look ahead masks
